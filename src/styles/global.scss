@@ -1,0 +1,49 @@
+@mixin mobile($property, $onMobile, $onScreen) {
+  $property: $onScreen;
+  @media (max-width: 600px) {
+    $property: $onMobile;
+  }
+}
+
+table {
+  box-shadow:0 0 2px 3px  #404040 ;
+  border-collapse: collapse;
+  border-radius: 4px 12px 4px 12px;
+  overflow: hidden;
+
+  & tr:nth-child(even) {
+    background-color: #40404060;
+  }
+
+  & tr:nth-child(even) {
+    background-color: #70707060;
+  }
+
+  & thead{
+    & th{
+      background-color: #00723466;
+    }
+  }
+  & td, th {
+    padding: 6px;
+    line-height: 2.1rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+
+    &:not(:first-child, :last-child) {
+      border-left: 1px solid rgb(var(--card-border-rgb));
+      border-right: 1px solid rgb(var(--card-border-rgb));
+    }
+
+    &:first-child {
+      border-right: 1px solid rgb(var(--card-border-rgb));
+
+    }
+
+    &:last-child {
+      border-left: 1px solid rgb(var(--card-border-rgb));
+
+    }
+  }
+}
+
